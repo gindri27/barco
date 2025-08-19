@@ -1,0 +1,30 @@
+{
+   // Use IntelliSense to learn about possible attributes.
+   // Hover to view descriptions of existing attributes.
+   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+   "version": "0.2.0",
+   "configurations": [
+       {
+           "type": "chrome",
+           "request": "launch",
+           "name": "Open index.html",
+           "file": "/tmp/guest-gukkup/Documentos/criando-sua-aventura-aula-07/index.html"
+       }
+   ]
+}
+
+
+script.js
+const avanca = document.querySelectorAll('.btn-proximo');
+
+
+avanca.forEach(button => {
+   button.addEventListener('click', function(){
+       const atual = document.querySelector('.ativo');
+       const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
+
+
+       atual.classList.remove('ativo');
+       document.getElementById(proximoPasso).classList.add('ativo');
+   })
+})
